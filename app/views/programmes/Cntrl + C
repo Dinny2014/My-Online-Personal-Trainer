@@ -1,0 +1,35 @@
+Cntrl + C
+
+ rails g scaffold ProgrammeExercise	programme:references exercise:references order:integer tempo reps:integer time:integer rest:integer sets:integer time_per_set:integer
+
+rake db:migrate
+
+rails s
+
+
+in app/models/programme.rb
+
+add the following:
+
+has_many :programme_exercises
+has_many :exercises, through: :programme_exercises
+
+
+
+in app/models/exercise.rb
+
+has_many :programme_exercises
+has_many :programmes, through: :programme_exercises
+
+
+
+in app/models/programme_exercise.rb
+
+before_save :calculate_time_per_set
+
+def calculate_time_per_set
+	self.time + self.rest
+end
+
+
+go to localhost:3000/programme_exercises/new

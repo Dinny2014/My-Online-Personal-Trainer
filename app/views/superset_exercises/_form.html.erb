@@ -1,0 +1,35 @@
+<%= simple_form_for(@superset_exercise) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.association :superset, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.association :exercise, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :order, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :tempo, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :reps, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :time, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :rest, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :sets, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :time_per_set, input_html: { class: 'form-control'} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.button :submit %>
+  </div>
+<% end %>

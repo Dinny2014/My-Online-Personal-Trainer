@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  superset_id: 
+  exercise_id: 
+  order: 1
+  tempo: MyString
+  reps: 1
+  time: 1
+  rest: 1
+  sets: 1
+  time_per_set: 1
+
+two:
+  superset_id: 
+  exercise_id: 
+  order: 1
+  tempo: MyString
+  reps: 1
+  time: 1
+  rest: 1
+  sets: 1
+  time_per_set: 1

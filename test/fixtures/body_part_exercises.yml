@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body_part_id: 
+  exercise_id: 
+
+two:
+  body_part_id: 
+  exercise_id: 

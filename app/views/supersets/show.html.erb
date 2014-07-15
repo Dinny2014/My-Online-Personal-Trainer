@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @superset.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @superset.description %>
+</p>
+
+<p>
+  <strong>Sets:</strong>
+  <%= @superset.sets %>
+</p>
+
+<%= link_to 'Edit', edit_superset_path(@superset) %> |
+<%= link_to 'Back', supersets_path %>

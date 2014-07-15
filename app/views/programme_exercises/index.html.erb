@@ -1,0 +1,41 @@
+<h1>Listing programme_exercises</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Programme</th>
+      <th>Exercise</th>
+      <th>Exercise</th>
+      <th>Order</th>
+      <th>Time</th>
+      <th>Rest</th>
+      <th>Sets</th>
+      <th>Time per set</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programme_exercises.each do |programme_exercise| %>
+      <tr>
+        <td><%= programme_exercise.programme %></td>
+        <td><%= programme_exercise.exercise %></td>
+        <td><%= programme_exercise.exercise %></td>
+        <td><%= programme_exercise.order %></td>
+        <td><%= programme_exercise.time %></td>
+        <td><%= programme_exercise.rest %></td>
+        <td><%= programme_exercise.sets %></td>
+        <td><%= programme_exercise.time_per_set %></td>
+        <td><%= link_to 'Show', programme_exercise %></td>
+        <td><%= link_to 'Edit', edit_programme_exercise_path(programme_exercise) %></td>
+        <td><%= link_to 'Destroy', programme_exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Programme exercise', new_programme_exercise_path %>

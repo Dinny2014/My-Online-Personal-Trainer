@@ -1,0 +1,17 @@
+<%= simple_form_for(@video) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :name, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :url, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.association :exercise, input_html: { class: 'form-control'} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.button :submit %>
+  </div>
+<% end %>

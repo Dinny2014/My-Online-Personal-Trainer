@@ -1,0 +1,20 @@
+<%= simple_form_for(@exercise) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :name, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :exercise_type, collection: ['Dumbell', 'Machines', 'Barbell', 'Bodyweight', 'Cable Machine', 'Kettle Bell', 'Fit Ball', 'GHD', 'Sled', 'TRX', ], as: :radio_buttons %>
+  </div>
+  <div class="form-group">
+    <%= f.association :body_parts, as: :check_boxes %>
+  </div>
+
+  <div class="form-group">
+    <%= f.button :submit %>
+  </div>
+<% end %>

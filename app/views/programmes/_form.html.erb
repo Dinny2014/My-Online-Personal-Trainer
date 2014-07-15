@@ -1,0 +1,22 @@
+<%= simple_form_for(@programme) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :name, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, input_html: { class: 'form-control'} %>
+  </div>
+  <%=f.input :duration, label: 'Duration in weeks' %>
+  <%= f.input :sex,collection: ['male','female'],as: :radio_buttons %> 
+
+  <div class="form-group">
+    <%= f.association :programme_type, input_html: { class: 'form-control'} %>
+  </div>
+
+ 
+  <div class="form-group">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+<%= javascript_include_tag :defaults, "nested_form" %>

@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+<div class="col-md-9">
+<p>
+  <strong>Name:</strong>
+  <%= @programme.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @programme.description %>
+</p>
+
+<p>
+  <strong>Programme type:</strong>
+  <%= @programme.programme_type.name %>
+</p>
+
+<p>
+  <strong>Duration</strong>
+  <%= @programme.duration %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @programme.sex %>
+</p>
+
+<table class="table">
+  <tr>
+    <th>Exercise</th>
+    <th>Tempo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @programme.exercises.each do |exercise| %>
+  <tr>
+  	<td><%= exercise.name %></td>
+    <td>
+        
+        <%= simple_form_for ProgrammeExercise.where(exercise: exercise).first do |f| %>
+          <%= f.input :tempo, label: false %>
+          <%= f.submit 'Save' %>
+        <% end %>
+    </td>
+    <td></td>
+    <td></td>
+    <td> <%= link_to 'Remove', remove_exercise_from_programme_path(exercise: exercise), class: 'btn btn-danger btn-xs' %></td>
+  </tr>
+
+<% end %>
+</table> 
+
+<%= link_to 'Edit', edit_programme_path(@programme) %> |
+<%= link_to 'Back', programmes_path %>
+</div>
+<div class="col-md-3">
+<h2>Add exercises</h2>
+<% @exercises.each do |exercise| %>
+  <% if !@programme.exercises.include?(exercise) %>
+  <p><%= link_to exercise.name, add_exercise_to_programme_path(exercise: exercise), class: 'btn btn-default' %></p>
+  <% end %>
+<% end %>
+</div>
+</div>

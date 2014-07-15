@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Superset:</strong>
+  <%= @superset_exercise.superset %>
+</p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @superset_exercise.exercise %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @superset_exercise.order %>
+</p>
+
+<p>
+  <strong>Tempo:</strong>
+  <%= @superset_exercise.tempo %>
+</p>
+
+<p>
+  <strong>Reps:</strong>
+  <%= @superset_exercise.reps %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @superset_exercise.time %>
+</p>
+
+<p>
+  <strong>Rest:</strong>
+  <%= @superset_exercise.rest %>
+</p>
+
+<p>
+  <strong>Sets:</strong>
+  <%= @superset_exercise.sets %>
+</p>
+
+<p>
+  <strong>Time per set:</strong>
+  <%= @superset_exercise.time_per_set %>
+</p>
+
+<%= link_to 'Edit', edit_superset_exercise_path(@superset_exercise) %> |
+<%= link_to 'Back', superset_exercises_path %>

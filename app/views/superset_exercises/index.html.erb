@@ -1,0 +1,43 @@
+<h1>Listing superset_exercises</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Superset</th>
+      <th>Exercise</th>
+      <th>Order</th>
+      <th>Tempo</th>
+      <th>Reps</th>
+      <th>Time</th>
+      <th>Rest</th>
+      <th>Sets</th>
+      <th>Time per set</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @superset_exercises.each do |superset_exercise| %>
+      <tr>
+        <td><%= superset_exercise.superset %></td>
+        <td><%= superset_exercise.exercise %></td>
+        <td><%= superset_exercise.order %></td>
+        <td><%= superset_exercise.tempo %></td>
+        <td><%= superset_exercise.reps %></td>
+        <td><%= superset_exercise.time %></td>
+        <td><%= superset_exercise.rest %></td>
+        <td><%= superset_exercise.sets %></td>
+        <td><%= superset_exercise.time_per_set %></td>
+        <td><%= link_to 'Show', superset_exercise %></td>
+        <td><%= link_to 'Edit', edit_superset_exercise_path(superset_exercise) %></td>
+        <td><%= link_to 'Destroy', superset_exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Superset exercise', new_superset_exercise_path %>

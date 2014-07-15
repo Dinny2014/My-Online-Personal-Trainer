@@ -1,0 +1,29 @@
+<h1>Listing programme_types</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programme_types.each do |programme_type| %>
+      <tr>
+        <td><%= programme_type.name %></td>
+        <td><%= programme_type.description %></td>
+        <td><%= link_to 'Show', programme_type %></td>
+        <td><%= link_to 'Edit', edit_programme_type_path(programme_type) %></td>
+        <td><%= link_to 'Destroy', programme_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Programme type', new_programme_type_path %>
